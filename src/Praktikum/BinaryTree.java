@@ -3,22 +3,20 @@ package Praktikum;
 public class BinaryTree {
     private Node root;
 
-    //KONSTRUKTOR
     public void NewData(char data) {
         root = NewData(root, new Node(data));
     }
 
-    //PROSES PEMBUATAN TREE
     private Node NewData(Node root, Node addNew) {
         if (root == null) {
             root = addNew;
             return root;
         }
-        if (addNew.data < root.data) {       //KONDISI KETIKA NILAI NODE LEBIH KECIL DARI ROOT,
-            root.left = NewData(root.left, addNew); //MAKA AKAN BERADA DI CABANG SEBELAH KIRI
+        if (addNew.data < root.data) {      
+            root.left = NewData(root.left, addNew); 
         } else {
-            root.right = NewData(root.right, addNew); //KONDISI KETIKA NILAI NODE LEBIH BESAR DARI ROOT.
-        }                                                 //MAKA AKAN BERADA DI CABANG SEBELAH KIRI
+            root.right = NewData(root.right, addNew);
+        }                                                 
         return root;
     }
 
